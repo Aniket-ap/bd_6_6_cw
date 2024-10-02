@@ -3,6 +3,11 @@ const app = express();
 const { getAllEmployees, getEmployeeById } = require('./employees');
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send("Welcome to BD_6.6_CW")
+});
+
+
 app.get('/employees', (req, res) => {
   const employees = getAllEmployees();
   if (employees.length > 0) {
